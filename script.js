@@ -9,8 +9,7 @@ var closePopupSpan = document.getElementById("close-popup");
 
 // Função para abrir o pop-up
 function openPopup() {
-  // Faz o pop-up aparecer
-  popup.style.display = "block";
+  popup.style.display = "block"; // Faz o pop-up aparecer
 }
 
 // Adiciona evento de clique a todos os botões "Ler Mais"
@@ -20,15 +19,13 @@ openPopupButtons.forEach(function (button) {
 
 // Função para fechar o pop-up ao clicar no "X"
 closePopupSpan.onclick = function () {
-  // Faz o pop-up desaparecer
-  popup.style.display = "none";
+  popup.style.display = "none"; // Faz o pop-up desaparecer
 };
 
 // Função para fechar o pop-up ao clicar fora dele
 window.onclick = function (event) {
   if (event.target == popup) {
-    // Faz o pop-up desaparecer se clicar fora dele
-    popup.style.display = "none";
+    popup.style.display = "none"; // Faz o pop-up desaparecer se clicar fora dele
   }
 };
 

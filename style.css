@@ -2,17 +2,17 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Configura o box model para incluir bordas e padding nas dimensões */
+  box-sizing: border-box;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Garante que a altura mínima do corpo seja 100% da altura da janela */
+  min-height: 100vh;
 }
 
-/* Estilo do cabeçalho */
+/* Cabeçalho */
 header {
   background-color: rgb(51, 53, 58);
   padding: 30px;
@@ -21,10 +21,13 @@ header {
   font-weight: bold;
 }
 
-/* Estilo da navegação */
+/* Navegação */
 nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #333;
+  padding: 10px;
 }
 
 nav a {
@@ -32,6 +35,8 @@ nav a {
   padding: 10px;
   text-decoration: none;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 nav a:hover {
@@ -39,20 +44,52 @@ nav a:hover {
   color: black;
 }
 
-/* Estilo do botão de menu */
-.menu-toggle {
-  display: none; /* Esconde o botão em telas maiores */
+/* Barra de busca */
+.barra-buscar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  height: 100%;
 }
 
-/* Estilos para dispositivos móveis */
+.barra-buscar input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  height: 100%;
+}
+
+.barra-buscar button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  height: 100%;
+}
+
+.barra-buscar button:hover {
+  background-color: #0056b3;
+}
+
+/* Botão de menu */
+.menu-toggle {
+  display: none;
+}
+
+/* Responsividade para dispositivos móveis */
 @media screen and (max-width: 600px) {
   .nav-links {
-    display: none; /* Oculta os links de navegação inicialmente */
+    display: none;
     flex-direction: column;
   }
 
   .menu-toggle {
-    display: block; /* Mostra o botão em dispositivos móveis */
+    display: block;
     background-color: #333;
     color: white;
     padding: 10px;
@@ -66,16 +103,16 @@ nav a:hover {
   }
 }
 
-/* Estilo para mostrar o menu quando ativado */
+/* Exibição do menu quando ativado */
 .nav-links.show {
-  display: flex; /* Mostra o menu quando a classe "show" é adicionada */
+  display: flex;
 }
 
-/* Estilo do conteúdo principal */
+/* Conteúdo principal */
 #row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Distribui o espaço entre os itens */
+  justify-content: space-between;
 }
 
 aside {
@@ -84,7 +121,7 @@ aside {
   padding: 20px;
 }
 
-/* Estilo das imagens dos gatos */
+/* Imagens dos gatos */
 .foto-gato img {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -93,34 +130,49 @@ aside {
   max-width: 300px;
   height: auto;
   margin: 0 auto;
-  border-radius: 16px; /* Bordas arredondadas */
+  border-radius: 16px;
 }
 
-/* Estilo dos parágrafos */
+/* Parágrafos */
 aside p {
   padding-bottom: 10px;
+  text-align: justify;
 }
 
-/* Estilo das imagens de publicidade */
+/* Imagens de publicidade */
 .foto {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-  margin-bottom: 10px;
+  background-color: #aaaaaa44;
+  padding: 10px;
+  width: 87%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* Estilo da área principal */
+.foto img {
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.ads {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Área principal */
 main {
   flex: 60%;
   background-color: white;
   padding: 21px;
 }
 
-/* Estilo dos artigos */
+/* Artigos */
 article {
-  box-shadow: 0px 0px 10px #aaa; /* Sombra ao redor do artigo */
+  box-shadow: 0px 0px 10px #aaa;
   padding: 6px;
-  border-radius: 10px; /* Bordas arredondadas */
+  border-radius: 10px;
   text-align: left;
   margin-bottom: 12px;
 }
@@ -142,12 +194,13 @@ main article p {
   display: flex;
   padding-top: 2px;
   text-align: left;
+  text-align: justify;
 }
 
 article img {
   width: 60%;
   margin: 10px auto;
-  border-radius: 5px; /* Bordas arredondadas */
+  border-radius: 5px;
   display: block;
 }
 
@@ -161,7 +214,7 @@ article img {
   padding-top: 0;
 }
 
-/* Estilo do botão "Ler Mais" */
+/* Botão "Ler Mais" */
 .button-mais {
   display: flex;
   align-items: flex-end;
@@ -191,7 +244,7 @@ article img {
   color: white;
 }
 
-/* Estilo do rodapé */
+/* Rodapé */
 footer {
   background-color: #444;
   padding: 10px;
@@ -201,9 +254,9 @@ footer {
   margin-top: auto;
 }
 
-/* Estilo para o pop-up */
+/* Pop-up */
 .popup {
-  display: none; /* Oculto por padrão */
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -211,7 +264,7 @@ footer {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro */
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .popup-content {
@@ -222,7 +275,7 @@ footer {
   width: 80%;
   max-width: 500px;
   text-align: center;
-  border-radius: 8px; /* Bordas arredondadas */
+  border-radius: 8px;
 }
 
 .close {
@@ -243,10 +296,10 @@ footer {
   width: 100%;
   height: auto;
   margin-bottom: 10px;
-  border-radius: 8px; /* Bordas arredondadas */
+  border-radius: 8px;
 }
 
-/* Estilo responsivo para dispositivos menores */
+/* Responsivo para dispositivos menores */
 @media screen and (max-width: 600px) {
   #row {
     flex-direction: column;
